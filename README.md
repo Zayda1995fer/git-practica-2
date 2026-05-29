@@ -2,91 +2,72 @@
 Taller GIT. Práctica 2.
 Guarda los comandos realizados, así como los resultados(capturas), integrarlo dentro del mismo repositorio
 
-## Trabajar con un proyecto HTML y un repositorio local.
-- Crea una carpeta practica-taller-git en tu pc.
-- Inicializa el repositorio. 
- ```bash
- git init
- ```
-- Crea el fichero index.html con un html simple.
-- Comprueba que el repositorio a detectado el cambio. 
-```bash
-git status
-```
-- Añade el fichero al stage. 
-```bash
-git add index.html.
-```
-- Confirma los cambios. 
-```bash
-git commit -m “added index file”
-```
-- Añade un fichero description.html y edita index.html.
-- Comprueba que ha detectado el nuevo fichero y la modificación de index.
-```bash
-git status
-git diff
-```
-- Crea un fichero TODO.txt de tareas pendientes.
-- Comprueba que git ha detectado el nuevo fichero. 
-```bash
-git status
-```
-- Ignora el fichero TODO.txt ya que es donde anotaremos nuestras tareas personales y no debe formar parte del proyecto. Para ello crea un fichero .gitignore con la linea TODO.txt.
-- Comprueba que ya no detecta el nuevo fichero TODO.txt (si que detectara el .gitignore claro). 
-```bash
-git status
-```
-- Añade y confirma el .gitignore.
-- Puedes continuar añadiendo ficheros html, css e imágenes para probar el repositorio.
+# Preguntas y Respuestas Git
 
+## ¿Qué sucede cuando hacemos un git add?
 
-## Haz un fork del repositorio creado para la práctica del taller:
-- Entra en https://github.com/
-- Accede a tu cuenta.
-- Accede al repositorio del profesor https://github.com/lalobarri/git-practica-2.git
-- Pulsa el botón fork (parte superior derecha) para crearte una copia del mismo en tu cuenta.
-- Clona el repositorio en tu equipo *en otra carpeta diferente que la llamaremos 'git-practica-2'*. Quedará algo parecido a lo siguiente:
+El comando git add agrega los archivos modificados al área de preparación (stage), dejándolos listos para ser confirmados con un commit.
+
+---
+
+## ¿Qué sucede cuando hacemos un git commit? ¿Dónde está ese commit?
+
+El comando git commit guarda una versión de los cambios realizados en el repositorio local. El commit se almacena en el historial del repositorio Git dentro de nuestra computadora.
+
+---
+
+## ¿Por qué al hacer git commit todavía no está disponible ese commit en el repositorio remoto?
+
+Porque el commit solamente se guarda en el repositorio local y aún no se ha enviado al servidor remoto.
+
+---
+
+## ¿Qué hay que hacer para que veamos este commit en nuestro repositorio remoto de github?
+
+Debemos utilizar el comando git push para enviar los cambios al repositorio remoto de GitHub.
+
+---
+
+## ¿Qué diferencia hay entre hacer un fork o crear una nueva rama?
+
+Un fork crea una copia completa de un repositorio en otra cuenta de GitHub, mientras que una rama crea una línea de trabajo separada dentro del mismo repositorio.
+
+---
+
+## ¿Qué comando se utiliza para crear una nueva rama sin cambiarte a ella?
+
 ```bash
-git clone https://github.com/[tu-nombre-de-usuario]/git-practica-2.git
+git branch nombre-rama
 ```
-- Crea un nuevo fichero en el proyecto que se llame [tu-nombre-de-usuario].html
-- Edita el fichero añadiendo como título tu nombre, algún texto y lo que desees en el.
-- Añade el fichero al repositorio.
-- Súbelo al repositorio remoto (github). 
+
+---
+
+## ¿Cuál es la diferencia entre los comandos git switch y git checkout al trabajar con ramas?
+
+git switch se utiliza específicamente para cambiar entre ramas, mientras que git checkout también puede usarse para restaurar archivos y otras funciones.
+
+---
+
+## ¿Qué es una rama por defecto (como main o master) y por qué es importante?
+
+Es la rama principal del proyecto donde normalmente se encuentra la versión estable del código.
+
+---
+
+## ¿Qué comando te permite ver la lista de todas las ramas locales de tu repositorio?
+
 ```bash
-git push
+git branch
 ```
-- Crea una rama develop y cámbiate a ella.
-```bash
-git checkout -b develop
-```
-- Realiza cambios en el proyecto, confírmalos y súbelos al repositorio remoto.
-```bash
-git status
-git add *
-git commit -m "Mensaje del commit..."
-git push origin
-```
-- Desde github crea un pull request de la rama develop a main.
-- Fusiona la rama develop con en main. No deberías de tener ningún conflicto.
-- Haz nuevos cambios en el proyecto siguiendo el flujo de trabajo git flow.
 
+---
 
-## Preguntas
-Crea un nuevo fichero respuestas.md, contesta las siguientes preguntas y súbelo a tu repositorio remoto de github:
+## En el contexto de Git, explica con tus propias palabras qué es una rama (branch) y cuál es su beneficio principal al trabajar en un proyecto de software
 
- 1. ¿Qué sucede cuando hacemos un git add?
- 2. ¿Qué sucede cuando hacemos un git commit? ¿Dónde está ese commit? 
- 3. ¿Por qué al hacer git commit todavía no está disponible ese commit en el repositorio remoto?
- 4. ¿Qué hay que hacer para que veamos este commit en nuestro repositorio remoto de github?
- 5. ¿Qué diferencia hay entre hacer un fork o crear una nueva rama?
- 6. ¿Qué comando se utiliza para crear una nueva rama sin cambiarte a ella?
- 7. ¿Cuál es la diferencia entre los comandos git switch y git checkout al trabajar con ramas?
- 8. ¿Qué es una rama por defecto (como main o master) y por qué es importante?
- 9. ¿Qué comando te permite ver la lista de todas las ramas locales de tu repositorio?
- 10. En el contexto de Git, explica con tus propias palabras qué es una rama (branch) y cuál es su beneficio principal al trabajar en un proyecto de software
- 11. ¿Qué ha pasado con el contenido de la carpeta practica-taller-git? ¿Por qué no la podemos ver en nuestro repositorio remoto de github?
+Una rama es una copia independiente del proyecto que permite trabajar en nuevas funciones o cambios sin afectar la versión principal.
 
+---
 
-*Utilice un formato que permita distinguir entre sus preguntas y respuestas*
+## ¿Qué ha pasado con el contenido de la carpeta practica-taller-git? ¿Por qué no la podemos ver en nuestro repositorio remoto de github?
+
+No aparece porque ese proyecto local no fue conectado ni subido al repositorio remoto donde trabajamos el fork.
